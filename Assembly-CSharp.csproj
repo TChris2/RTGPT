@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ClipInfo.cs" />
+    <Compile Include="Assets\Scripts\ScreenDecide.cs" />
     <Compile Include="Assets\Scripts\DisableIntroAnimator.cs" />
     <Compile Include="Assets\Scripts\UpdateTextBox.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
