@@ -347,7 +347,15 @@ public class GameManager : MonoBehaviour
         volumeSlider.value = 1;
         pitchSlider.value = 1;
         delaySliders[0].value = 1;
-        delaySliders[1].value = 20;
+        delaySliders[1].value = 15;
+    }
+
+    public void ClearChat()
+    {
+        foreach (Transform child in chatLog)
+        {
+            Destroy(child.gameObject);
+        }
     }
 
     // Resets clip type filters
