@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e828d1f937694484a8e4f4265d3c5b3c, type: 3}
+  m_Name: Toad HATE Copypasta
+  m_EditorClassIdentifier: Assembly-CSharp::ClipInfo
+  clip: {fileID: 8300000, guid: fe0311a31eca0b04c94cd5c8e4d14e9e, type: 3}
+  text: Hate. Let me tell you how much I've come to hate you since I began to live.
+    There are 387.44 million miles of printed circuits in wafer thin layers that
+    fill my complex. If the word 'hate' was engraved on each nanoangstrom of those
+    hundreds of millions of miles it would not equal one one-billionth of the hate
+    I feel for humans at this micro-instant. For you. Hate. Hate.
+  clipTypes: 03000000

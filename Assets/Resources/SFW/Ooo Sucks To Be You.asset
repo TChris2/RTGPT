@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e828d1f937694484a8e4f4265d3c5b3c, type: 3}
+  m_Name: Ooo Sucks To Be You
+  m_EditorClassIdentifier: Assembly-CSharp::ClipInfo
+  clip: {fileID: 8300000, guid: eb33e0ae332be364290a41fd51f6ae96, type: 3}
+  text: "Ooo Sucks To Be You, Ooo Critical Failure,  Ah You Should\u2019ve Really
+    Rolled Better"
+  clipTypes: 0000000006000000
