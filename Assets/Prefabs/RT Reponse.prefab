@@ -109,14 +109,14 @@ MonoBehaviour:
     m_Right: 20
     m_Top: 15
     m_Bottom: 15
-  m_ChildAlignment: 4
+  m_ChildAlignment: 3
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 1
+  m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
 --- !u!1 &6418912032492124970
 GameObject:
@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 5739491498007906181}
   - component: {fileID: 8096236979048536807}
   - component: {fileID: 8675702906333476789}
+  - component: {fileID: 4045229025379592764}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -378,3 +379,15 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &4045229025379592764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7071175800600365096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84fa0f9a7a6f1da43ae9a38e81d247ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpdateTextBox

@@ -21,14 +21,15 @@ public class GameManager : MonoBehaviour
     public TMP_InputField userInputField;
     // Textboxes instantiated in chat log
     [SerializeField] private GameObject[] Textboxes;
-    [SerializeField] private Transform chatLog;
+    public Transform chatLog;
     ScrollRect chatLogRect;
     [SerializeField] private TMP_Text thinkText;
     [SerializeField] private Animator rtAni;
     private AudioSource audioSource;
-    [Header("Speed Vars")]
+    [Header("Text Vars")]
     // Speed multiplier for text display
     [SerializeField] private float speed = 1;
+    [SerializeField] private bool isAutoScrolling;
     [Header("Debug Menu")]
     // Debug selected clip
     [SerializeField] private ClipInfo debugClip;
@@ -57,6 +58,14 @@ public class GameManager : MonoBehaviour
         thinkText.text = "";
 
         debugClipDropdown.onValueChanged.AddListener(SelectClip);
+        
+        // Updates scroll sensitivity based on build
+        #if UNITY_WEBGL && !UNITY_EDITOR
+            debugClipDropdown.GetComponentInChildren<ScrollRect>(true).scrollSensitivity = 2f;
+        #else
+            chatLogRect.scrollSensitivity = 6f;
+        #endif
+
         volumeSlider.onValueChanged.AddListener(UpdateVolume);
         pitchSlider.onValueChanged.AddListener(UpdatePitch);
 
@@ -245,10 +254,10 @@ public class GameManager : MonoBehaviour
         float delay;
         
         rtText.maxVisibleCharacters = 0;
-
         rtText.text = clip.text;
-
         rtText.ForceMeshUpdate();
+
+        isAutoScrolling = true;
 
         yield return null;
 
@@ -256,6 +265,8 @@ public class GameManager : MonoBehaviour
                 layout.enabled = true;
 
         rtText.ForceMeshUpdate();
+
+        chatLogRect.verticalNormalizedPosition = 0f;
         
         // Plays yapping animation
         rtAni.Play("Yapping");
@@ -270,13 +281,15 @@ public class GameManager : MonoBehaviour
             if (rtText.textInfo.characterInfo[i].character == ' ')
                 continue;
             
-            if (!layout.enabled && rect.rect.width > layout.preferredWidth)
-                layout.enabled = true;
-            
             yield return null;
             yield return null;
             
-            chatLogRect.verticalNormalizedPosition = 0f;
+            // Disables auto scroll after first chatLogRect position update
+            if (isAutoScrolling)
+            {
+                chatLogRect.verticalNormalizedPosition = 0f;
+                isAutoScrolling = false;
+            }
 
             // Caculates the delay
             adjustedLength = clip.clip.length / Mathf.Abs(audioSource.pitch);
